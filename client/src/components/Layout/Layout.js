@@ -1,5 +1,6 @@
 import UpperMenu from "../UpperMenu/UpperMenu";
 import Footer from "../Footer/Footer";
+import './Layout.styles.css';
 
 const Layout = ({ children }) => {
     return (
