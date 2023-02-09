@@ -1,0 +1,48 @@
+.categories-container {
+    background-color: aquamarine;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+ 
+.category-list {
+    background-color: #e8eaed;
+    width: 25rem;
+    height: 34rem;
+    cursor: pointer;
+}
+
+.category-main {
+    height: 4rem;
+    padding-left: 2rem;
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem;
+    text-decoration: underline;
+}
+
+.category-image {
+    height: 25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.category-name {
+    height: 1.5rem;
+    padding-left: 2rem;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    font-size: .8rem;
+}
+
+.category-price {
+    height: 1.5rem;
+    padding-left: 2rem;
+    display: flex;
+    align-items: center;
+    font-size: .8rem;
+}
