@@ -1,14 +1,15 @@
 .categories-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    justify-items: center;
-    gap: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.2rem;
     margin-top: 3rem;
+    margin-bottom: 3rem;
 }
  
 .category-list {
-    background-color: #e8eaed;
-    width: 25rem;
+    background-color: #f0f0f0;
+    width: 27rem;
     height: 34rem;
     cursor: pointer;
 }
@@ -27,6 +28,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.image {
+    width: 20rem;
+    height: fit-content;
 }
 
 .category-name {

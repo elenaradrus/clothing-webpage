@@ -4,10 +4,10 @@ const UpperMenu = () => {
     return (
         <div className="upperMenu-container">
             <div className="links">
-                <h3>Jeremy Tunner</h3>
-                <p>Shop</p>
-                <p>About</p>
-                <p>Help</p>
+                <h3 className='jeremyTunner'>Jeremy Tunner</h3>
+                <p className='upperMenuText'>Shop</p>
+                <p className='upperMenuText'>About</p>
+                <p className='upperMenuText'>Help</p>
             </div>
 
             <div className="icons">

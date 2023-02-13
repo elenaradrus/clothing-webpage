@@ -1,7 +1,6 @@
 .upperMenu-container {
     display: flex;
     justify-content: space-between;
-    background-color: gold;
     height: 4rem;
 }
 
@@ -9,8 +8,43 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 25rem;
+    width: 35rem;
     padding-left: 1.5rem;
+}
+
+.jeremyTunner {
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+
+}
+
+.upperMenuText {
+    text-transform: uppercase;
+    font-size: small;
+    letter-spacing: .3rem;
+    color: #18272F;
+    position: relative;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.upperMenuText::before {
+    content: '';
+    position: absolute;
+    width: 92%;
+    height: 2px;
+    border-radius: 4px;
+    background-color: #18272F;
+    bottom: 0;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .3s ease-in-out;
+}
+
+.upperMenuText:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
 }
 
 .icons {
