@@ -1,9 +1,12 @@
-.upperMenu-container {
-    display: flex;
-    justify-content: space-between;
-    height: 4rem;
-    width: 100vw;
+@media (min-width: 768px) {
+    .upperMenu-container {
+        display: flex;
+        justify-content: space-between;
+        height: 4rem;
+        width: 100vw;
+    }
 }
+
 
 .links {
     display: flex;
