@@ -1,0 +1,29 @@
+.footer-container {
+    display: flex;
+    justify-content: space-evenly;
+    height: 15rem;
+    padding-top: 3rem;
+    border-top: 3px solid black;
+    margin-top: 2rem;
+}
+
+.footerInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 15rem;
+}
+
+.footerTitle {
+    text-transform: uppercase;
+}
+
+.footerText {
+    line-height: 2rem;
+}
+
+.footerCopywrite {
+    padding-left: 11rem;
+    height: 3rem;
+    color: gray;
+}

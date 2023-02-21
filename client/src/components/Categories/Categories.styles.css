@@ -1,0 +1,53 @@
+.categories-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.2rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+ 
+.category-list {
+    background-color: #f0f0f0;
+    width: 27rem;
+    height: 34rem;
+    cursor: pointer;
+}
+
+.category-main {
+    height: 4rem;
+    padding-left: 2rem;
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem;
+    text-decoration: underline;
+}
+
+.category-image {
+    height: 25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image {
+    width: 20rem;
+    height: fit-content;
+}
+
+.category-name {
+    height: 1.5rem;
+    padding-left: 2rem;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    font-size: .8rem;
+}
+
+.category-price {
+    height: 1.5rem;
+    padding-left: 2rem;
+    display: flex;
+    align-items: center;
+    font-size: .8rem;
+}
