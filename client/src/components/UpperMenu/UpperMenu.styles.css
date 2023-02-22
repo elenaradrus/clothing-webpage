@@ -19,7 +19,11 @@
 .jeremyTunner {
     text-transform: uppercase;
     letter-spacing: .2rem;
+    cursor: pointer;
+}
 
+.jeremyTunner:hover {
+    color: goldenrod;
 }
 
 .upperMenuText {
