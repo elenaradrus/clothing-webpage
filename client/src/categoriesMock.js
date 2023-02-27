@@ -9,26 +9,36 @@ export const categoriesMock = [
             {
                 id: 11,
                 name: 'The California',
+                image: 'http://localhost:3000/theCalifornia.jpeg',
+                thumbnail: 'http://localhost:3000/theCaliforniaModel.jpeg',
                 price: '$128',
             },
             {
                 id: 12,
                 name: 'The Jack',
+                image: 'http://localhost:3000/theJack.jpeg',
+                thumbnail: 'http://localhost:3000/theJackModel.jpeg',
                 price: '$125',
             },
             {
                 id: 13,
                 name: 'The Ledge Shirt',
+                image: 'http://localhost:3000/theLedge.jpeg',
+                thumbnail: 'http://localhost:3000/theLedgeModel.jpeg',
                 price: '$128',
             },
             {
                 id: 14,
                 name: 'The Utility Shirt',
+                image: 'http://localhost:3000/theUtility.jpeg',
+                thumbnail: 'http://localhost:3000/theUtilityModel.jpeg',
                 price: '$135',
             },
             {
                 id: 15,
                 name: 'The Western Shirt',
+                image: 'http://localhost:3000/theWestern.jpeg',
+                thumbnail: 'http://localhost:3000/theWesternModel.jpeg',
                 price: '$148',
             }
         ]
