@@ -40,6 +40,27 @@ export const categoriesMock = [
                 image: 'http://localhost:3000/theWestern.jpeg',
                 thumbnail: 'http://localhost:3000/theWesternModel.jpeg',
                 price: '$148',
+            },
+            {
+                id: 16,
+                name: 'The Division Shirt',
+                image: 'http://localhost:3000/theDivision.jpeg',
+                thumbnail: 'http://localhost:3000/theDivisionModel.jpeg',
+                price: '$128',
+            },
+            {
+                id: 17,
+                name: 'The Point Shirt',
+                image: 'http://localhost:3000/thePoint.jpeg',
+                thumbnail: 'http://localhost:3000/thePointModel.jpeg',
+                price: '$135',
+            },
+            {
+                id: 18,
+                name: 'The Core Shirt',
+                image: 'http://localhost:3000/theCore.jpeg',
+                thumbnail: 'http://localhost:3000/theCoreModel.jpeg',
+                price: '$148',
             }
         ]
     },
