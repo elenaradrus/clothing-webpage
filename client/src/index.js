@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import Collections from './pages/Collections/Collections';
 import reportWebVitals from './reportWebVitals';
+import Purchase from './pages/Purchase/Purchase';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -11,6 +12,7 @@ root.render(
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/collections/:id" element={<Collections />} />
+      <Route path="/purchase" element={<Purchase />} />
     </Routes>
   </BrowserRouter>
 );
