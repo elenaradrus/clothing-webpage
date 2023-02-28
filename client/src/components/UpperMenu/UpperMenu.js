@@ -1,10 +1,15 @@
+import { useNavigate } from 'react-router-dom';
 import './UpperMenu.styles.css';
 
 const UpperMenu = () => {
+    const navigate = useNavigate();
+    const goToHomePage = () => {
+        navigate('/')
+    }
     return (
         <div className="upperMenu-container">
             <div className="links">
-                <h3 className='jeremyTunner'>Jeremy Tunner</h3>
+                <h3 className='jeremyTunner' onClick={() => goToHomePage()}>Jeremy Tunner</h3>
                 <p className='upperMenuText'>Shop</p>
                 <p className='upperMenuText'>About</p>
                 <p className='upperMenuText'>Help</p>
