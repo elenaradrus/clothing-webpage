@@ -1,7 +1,11 @@
 //import { useParams } from "react-router-dom";
+//import { categoriesMock } from "../../categoriesMock";
 import './AddToCart.styles.css';
 
-const AddToCart = () => {
+const AddToCart = ({ itemId }) => {
+
+    console.log(itemId)
+
     return (
         <div className="addToCart-container">
             <div className="addToCart-image">

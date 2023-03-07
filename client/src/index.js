@@ -12,7 +12,7 @@ root.render(
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/collections/:id" element={<Collections />} />
-      <Route path="/purchase" element={<Purchase />} />
+      <Route path="/collections/:id/product/:itemId" element={<Purchase />} />
     </Routes>
   </BrowserRouter>
 );
