@@ -10,7 +10,6 @@ const Items = ({ id }) => {
     const collection = categoriesId.collections;
     const [currentImage, setCurrentImage] = useState(null);
     const navigate = useNavigate();
-    
 
     const handleMouseOver = (image) => {
         setCurrentImage(image);

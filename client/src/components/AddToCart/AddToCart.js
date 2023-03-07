@@ -1,20 +1,28 @@
 //import { useParams } from "react-router-dom";
-//import { categoriesMock } from "../../categoriesMock";
+import { categoriesMock } from "../../categoriesMock";
 import './AddToCart.styles.css';
 
-const AddToCart = ({ itemId }) => {
+const AddToCart = ({ id, itemId }) => {
 
-    console.log(itemId)
+    console.log('itemId', itemId)
 
+    const categoriesId = categoriesMock.find(category => category.id === id);
+    const collection = categoriesId.collections;
+    const getItem = collection.find(e => e.id == itemId)
+    
     return (
         <div className="addToCart-container">
             <div className="addToCart-image">
-                Imagen
+                <img
+                    src={getItem.image}
+                    title={getItem.name}
+                    alt={getItem.name}
+                />
             </div>
             <div className='product-info'>
                 <div className='product-container'>
-                    <h2>The California</h2>
-                    <h1>$128</h1>
+                    <h2>{getItem.name}</h2>
+                    <h1>{getItem.price}</h1>
                 </div>
 
                 <div className='btn-container'>

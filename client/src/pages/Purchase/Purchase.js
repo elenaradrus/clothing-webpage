@@ -4,11 +4,11 @@ import Layout from "../../components/Layout/Layout";
 
 const Purchase = () => {
 
-    const { itemId } = useParams();
+    const { id, itemId } = useParams();
 
     return (
         <Layout>
-            <AddToCart itemId={itemId}/>
+            <AddToCart id={id} itemId={itemId}/>
         </Layout>
     );
 }
