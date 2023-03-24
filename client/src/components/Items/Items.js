@@ -33,7 +33,7 @@ const Items = ({ id }) => {
                         />
                     </div>
                     <div className='item-name'>{element.name}</div>
-                    <div className='item-price'>{element.price}</div>
+                    <div className='item-price'>$ {element.price}</div>
                 </div>
             ) : ''}
         </div>

@@ -20,7 +20,7 @@ const Categories = () => {
                         <img src={element.image} title={element.name} alt={element.name} className='image' id={element.id} onClick={(e) => goToCollectionsPage(e.target.id)}/> 
                     </div>
                     <div className='category-name'>{element.name}</div>
-                    <div className='category-price'>{element.price}</div>
+                    <div className='category-price'>$ {element.price}</div>
                 </div>
             ) : ''}
         </div>
