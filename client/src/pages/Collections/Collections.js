@@ -4,11 +4,11 @@ import Items from "../../components/Items/Items";
 
 const Collections = () => {
 
-    const { id } = useParams();
+    const { id, itemId } = useParams();
 
     return (
         <Layout>
-            <Items id={id}/>
+            <Items id={id} itemId={itemId}/>
         </Layout>
 
     );
