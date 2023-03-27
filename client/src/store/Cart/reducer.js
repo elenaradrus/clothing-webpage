@@ -20,15 +20,20 @@ const cartReducer = (state = initialState, action) => {
                 image: image,
                 size: size,
                 quantity: 1,
-                totalPrice: price,
+                totalPrice: price * 1,
             };
+            const newTotalPrice = state.totalPrice + (price * 1);
             return {
                 ...state,
                 items: {
                     ...state.items,
-                    [id]: item ? { ...item, quantity: item.quantity + 1 } : newItem,
+                    [id]: item ? {
+                        ...item,
+                        quantity: item.quantity + 1,
+                        totalPrice: item.totalPrice + price
+                    } : newItem,
                 },
-                totalPrice: state.totalPrice + price,
+                totalPrice: newTotalPrice,
                 totalItems: state.totalItems + 1,
             };
         default:
