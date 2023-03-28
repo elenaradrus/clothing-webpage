@@ -93,17 +93,17 @@ export const categoriesMock = [
         category: 'Bottoms',
         image: 'http://localhost:3000/bottoms.png',
         name: 'The Pack Pant',
-        price: '$138',
+        price: 138,
         collections: [
             {
                 id: 21,
                 name: 'panatlaon 1',
-                price: '123'
+                price: 123
             }, 
             {
                 id: 22,
                 name: 'panatlaon 2',
-                price: '123'
+                price: 124
 
             }
         ]
@@ -113,12 +113,12 @@ export const categoriesMock = [
         category: 'Outwear',
         image: 'http://localhost:3000/outwear.png',
         name: 'The Cavern Jacket',
-        price: '$188',
+        price: 188,
         collections: [
             {
                 id: 21,
                 name: 'chaqueta 1',
-                price: '124'
+                price: 124
             }
         ]
     },
@@ -127,12 +127,12 @@ export const categoriesMock = [
         category: 'Knits',
         image: 'http://localhost:3000/knits.png',
         name: 'The Heavy Bag Tee',
-        price: '$50',
+        price: 50,
         collections: [
             {
                 id:41,
                 name: 'camiseta 1',
-                price: '145'
+                price: 141
             }
         ]
     },
@@ -141,12 +141,12 @@ export const categoriesMock = [
         category: 'Accesories',
         image: 'http://localhost:3000/accesories.png',
         name: 'The Drop Point Knife',
-        price: '$68',
+        price: 68,
         collections: [
             {
                 id: 51,
                 name: 'accesorio 1',
-                price: '58'
+                price: 58
             }
         ]
     },
@@ -155,12 +155,12 @@ export const categoriesMock = [
         category: 'Footwear',
         image: 'http://localhost:3000/footwear.png',
         name: 'The Trench Boot',
-        price: '$348',
+        price: 348,
         collections: [
             {
                 id: 21,
                 name: 'zapato 1',
-                price: '345'
+                price: 345
             }
         ]
     }

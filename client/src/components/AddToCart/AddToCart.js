@@ -9,7 +9,6 @@ import Cart from '../Cart/Cart';
 
 const AddToCart = ({ id, itemId }) => {
 
-    console.log('itemId', itemId)
     const dispatch = useDispatch();
 
     const categoriesId = categoriesMock.find(category => category.id === id);

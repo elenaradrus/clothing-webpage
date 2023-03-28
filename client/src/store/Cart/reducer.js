@@ -1,6 +1,6 @@
 import {
     ADD_TO_CART,
-    ADD_TO_CART_ERROR
+    REMOVE_FROM_CART
 } from './types';
 
 const initialState = {
@@ -15,6 +15,7 @@ const cartReducer = (state = initialState, action) => {
             const { id, name, price, image, size } = action.payload;
             const item = state.items[id];
             const newItem = {
+                id: id,
                 name: name,
                 price: price,
                 image: image,
@@ -36,6 +37,22 @@ const cartReducer = (state = initialState, action) => {
                 totalPrice: newTotalPrice,
                 totalItems: state.totalItems + 1,
             };
+        case REMOVE_FROM_CART:
+            const itemId = action.payload;
+            const itemToRemove = state.items[itemId];
+            const newItems = { ...state.items };
+            let newTotalPriceRemove = state.totalPrice;
+            if (itemToRemove) {
+                newTotalPriceRemove -= itemToRemove.totalPrice;
+                delete newItems[itemId];
+            }
+            return {
+                ...state,
+                items: newItems,
+                totalPrice: newTotalPriceRemove,
+                totalItems: state.totalItems - (itemToRemove ? itemToRemove.quantity : 0),
+            };
+
         default:
             return state;
     }
