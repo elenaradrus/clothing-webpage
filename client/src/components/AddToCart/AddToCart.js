@@ -28,8 +28,6 @@ const AddToCart = ({ id, itemId }) => {
         }));
     };
 
-
-
     return (
         <div className="addToCart-container">
 

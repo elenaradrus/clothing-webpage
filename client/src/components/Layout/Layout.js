@@ -12,6 +12,10 @@ const Layout = ({ children }) => {
         setShowCart(true);
     };
 
+    const handleHideCart = () => {
+        setShowCart(false);
+    }
+
     return (
         <div>
             <UpperMenu
@@ -19,7 +23,7 @@ const Layout = ({ children }) => {
             />
             <div className="children-container">
                 {children}
-                {showCart && <Cart />}
+                {showCart && <Cart handleHideCart={handleHideCart}/>}
             </div>
             <Footer />
         </div>
