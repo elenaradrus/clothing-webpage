@@ -2,7 +2,7 @@ export const categoriesMock = [
     {
         id: 'DF71',
         category: 'Shirts',
-        image: 'http://localhost:3000/shirts.png',
+        image: 'https://firebasestorage.googleapis.com/v0/b/clothing-webpage.appspot.com/o/shirts.png?alt=media&token=b0c59051-7490-4771-991c-be8fe1a8abd3',
         name: 'The California',
         price: 128,
         collections: [
@@ -91,7 +91,7 @@ export const categoriesMock = [
     {
         id: 'HG76',
         category: 'Bottoms',
-        image: 'http://localhost:3000/bottoms.png',
+        image: 'https://firebasestorage.googleapis.com/v0/b/clothing-webpage.appspot.com/o/bottoms.png?alt=media&token=d2349a8a-2f65-43c4-9bea-6051af533100',
         name: 'The Pack Pant',
         price: 138,
         collections: [
@@ -111,7 +111,7 @@ export const categoriesMock = [
     {
         id: 'YT27',
         category: 'Outwear',
-        image: 'http://localhost:3000/outwear.png',
+        image: 'https://firebasestorage.googleapis.com/v0/b/clothing-webpage.appspot.com/o/outwear.png?alt=media&token=1dd27e77-4039-4f3c-b441-c06ff1d78cdb',
         name: 'The Cavern Jacket',
         price: 188,
         collections: [
@@ -125,7 +125,7 @@ export const categoriesMock = [
     {
         id: 'HU28',
         category: 'Knits',
-        image: 'http://localhost:3000/knits.png',
+        image: 'https://firebasestorage.googleapis.com/v0/b/clothing-webpage.appspot.com/o/knits.png?alt=media&token=802bdfde-a9a7-402a-af54-f13ce8f4896d',
         name: 'The Heavy Bag Tee',
         price: 50,
         collections: [
@@ -139,7 +139,7 @@ export const categoriesMock = [
     {
         id: 'LK23',
         category: 'Accesories',
-        image: 'http://localhost:3000/accesories.png',
+        image: 'https://firebasestorage.googleapis.com/v0/b/clothing-webpage.appspot.com/o/accesories.png?alt=media&token=15da5850-ed94-4fb2-87ad-09e27441fc88',
         name: 'The Drop Point Knife',
         price: 68,
         collections: [
@@ -153,7 +153,7 @@ export const categoriesMock = [
     {
         id: 'PL98',
         category: 'Footwear',
-        image: 'http://localhost:3000/footwear.png',
+        image: 'https://firebasestorage.googleapis.com/v0/b/clothing-webpage.appspot.com/o/footwear.png?alt=media&token=b0bd5ae3-be9e-423f-8964-c0bb878b846a',
         name: 'The Trench Boot',
         price: 348,
         collections: [
