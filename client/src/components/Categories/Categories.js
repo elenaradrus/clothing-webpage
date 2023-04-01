@@ -21,12 +21,11 @@ const Categories = () => {
         const categories = []
         CategoriesDataService.getCatogories().then((querySnapshot) => {
             querySnapshot.forEach(doc => {
-                categories.push({id: doc.id, data: doc.data()});
+                categories.push({ id: doc.id, data: doc.data() });
             });
             setCategories(categories)
-        })
-
-    }, [])
+        });
+    }, []);
 
     return (
         <div className='categories-container'>
