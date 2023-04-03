@@ -7,12 +7,17 @@ import {
 
 //const docRef = doc(db, COLLECTIONS.CATEGORIES);
 
-class CategoriesDataService {
-    getCatogories = async () => {
+class ItemsDataService {
+    getCategories = async () => {
         const querySnapshot = await getDocs(collection(db, COLLECTIONS.CATEGORIES));
+        return querySnapshot;
+    }
+
+    getItems = async (itemId) => { 
+        const querySnapshot = await getDocs(collection(db, COLLECTIONS.CATEGORIES, itemId, COLLECTIONS.ITEMS ));
         return querySnapshot;
     }
 }
 
-const categoriesDataService = new CategoriesDataService();
-export default categoriesDataService;
+const itemsDataService = new ItemsDataService();
+export default itemsDataService;

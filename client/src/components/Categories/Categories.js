@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { categoriesMock } from "../../categoriesMock";
 import './Categories.styles.css';
-import CategoriesDataService from "../../services/categories";
+import itemsDataService from "../../services/categories";
 import { useEffect, useState } from "react";
 
 
@@ -19,7 +19,7 @@ const Categories = () => {
 
     useEffect(() => {
         const categories = []
-        CategoriesDataService.getCatogories().then((querySnapshot) => {
+        itemsDataService.getCategories().then((querySnapshot) => {
             querySnapshot.forEach(doc => {
                 categories.push({ id: doc.id, data: doc.data() });
             });

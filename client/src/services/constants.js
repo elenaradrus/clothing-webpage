@@ -1,6 +1,6 @@
 const COLLECTIONS = {
     CATEGORIES: 'categories',
-    COLLECTIONS: 'collections'
+    ITEMS: 'items'
 };
 
 export default COLLECTIONS;

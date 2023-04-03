@@ -1,13 +1,12 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from "react-router-dom";
-
+import itemsDataService from '../../services/categories';
 import { categoriesMock } from "../../categoriesMock";
 import './Items.styles.css';
 
 const Items = ({ id }) => {
-
-    const categoriesId = categoriesMock.find(category => category.id === id);
-    const collection = categoriesId.collections;
+    
+    const [items, setItems] = useState();
     const [currentImage, setCurrentImage] = useState(null);
     const navigate = useNavigate();
 
@@ -19,21 +18,39 @@ const Items = ({ id }) => {
         navigate(`/collections/${id}/product/${itemId}`)
     }
 
+    useEffect(() => {
+        itemsDataService.getCategories().then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+                if (doc.id === id) {
+                    const items = []
+                    itemsDataService.getItems(doc.id).then((querySnapshot) => {
+                        querySnapshot.forEach((doc) => {
+                            items.push({ id: doc.id, data: doc.data() })
+                        });
+                        setItems(items)
+                        console.log(items)
+                    });
+                };
+            });
+        });
+
+    }, [])
+
     return (
         <div className='items-container'>
-            {collection ? collection.map((element, index) =>
+            {items ? items.map((items, index) =>
                 <div key={index} className='item-list'>
-                    <div className='item-image' id='element.id' onClick={(e) => goToPurchaseProduct(element.id)}>
+                    <div className='item-image' id='item.id' onClick={(e) => goToPurchaseProduct(items.id)}>
                         <img
-                            src={currentImage === element.image ? element.thumbnail : element.image}
-                            title={element.name}
-                            alt={element.name}
-                            onMouseOver={(e) => handleMouseOver(element.image)}
+                            src={currentImage === items.data.image ? items.data.thumbnail : items.data.image}
+                            title={items.data.name}
+                            alt={items.data.name}
+                            onMouseOver={(e) => handleMouseOver(items.data.image)}
                             onMouseLeave={() => setCurrentImage(null)}
                         />
                     </div>
-                    <div className='item-name'>{element.name}</div>
-                    <div className='item-price'>$ {element.price}</div>
+                    <div className='item-name'>{items.data.name}</div>
+                    <div className='item-price'>$ {items.data.price}</div>
                 </div>
             ) : ''}
         </div>
