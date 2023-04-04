@@ -1,5 +1,5 @@
 //import { useParams } from "react-router-dom";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { categoriesMock } from "../../categoriesMock";
 import './AddToCart.styles.css';
@@ -7,43 +7,64 @@ import './AddToCart.styles.css';
 import { addToCart } from "../../store/Cart/actions";
 import Cart from '../Cart/Cart';
 
+import itemsDataService from '../../services/categories';
+
 const AddToCart = ({ id, itemId }) => {
 
     const dispatch = useDispatch();
 
-    const categoriesId = categoriesMock.find(category => category.id === id);
-    const collection = categoriesId.collections;
-    const getItem = collection.find(e => e.id == itemId)
+    const [loading, setLoading] = useState(true);
 
     const [size, setSize] = useState('');
+    const [item, setItem] = useState();
+
+    console.log('id del item', itemId)
+
+
+    useEffect(() => {
+        setLoading(true);
+        itemsDataService.getItem(id, itemId).then((querySnapshot) => {
+            const itemData = querySnapshot.data();
+            const itemWithId = { id: querySnapshot.id, ...itemData };
+            setItem(itemWithId);
+            setLoading(false);
+        });
+    }, []);
+
+    console.log(item)
 
 
     const handleAddToCart = () => {
         dispatch(addToCart({
-            id: getItem.id,
-            name: getItem.name,
-            price: getItem.price,
-            image: getItem.image,
+            id: item.id,
+            name: item.name,
+            price: item.price,
+            image: item.image,
             size: size,
         }));
     };
 
+    if (loading) {
+        return <p>Loading...</p>;
+    }
+
     return (
+            
         <div className="addToCart-container">
 
             <div className='addToCart-product'>
                 <div className="addToCart-image">
                     <img
-                        src={getItem.secondImage}
-                        title={getItem.name}
-                        alt={getItem.name}
+                        src={item.secondImage}
+                        title={item.name}
+                        alt={item.name}
                     />
                 </div>
 
                 <div className='product-container'>
                     <div className='product-info'>
-                        <h2>{getItem.name}</h2>
-                        <h1>$ {getItem.price}</h1>
+                        <h2>{item.name}</h2>
+                        <h1>$ {item.price}</h1>
                     </div>
 
                     <div className='btn-container'>
@@ -62,7 +83,7 @@ const AddToCart = ({ id, itemId }) => {
                         </select>
                         <button
                             className='addToCart-button'
-                            onClick={() => handleAddToCart(getItem)}
+                            onClick={() => handleAddToCart(item)}
                             disabled={!size}
                         >
                             add to cart
@@ -73,13 +94,13 @@ const AddToCart = ({ id, itemId }) => {
             </div>
 
             <div className='landscapeImage-container'>
-                <p className='itemInfo'>{getItem.info}</p>
+                <p className='itemInfo'>{item.info}</p>
 
                 <img
                     className='landscapeImage'
-                    src={getItem.landscapeImage}
-                    title={getItem.name}
-                    alt={getItem.name}
+                    src={item.landscapeImage}
+                    title={item.name}
+                    alt={item.name}
                 />
             </div>
 

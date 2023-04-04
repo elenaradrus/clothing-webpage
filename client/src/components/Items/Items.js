@@ -28,7 +28,6 @@ const Items = ({ id }) => {
                             items.push({ id: doc.id, data: doc.data() })
                         });
                         setItems(items)
-                        console.log(items)
                     });
                 };
             });
