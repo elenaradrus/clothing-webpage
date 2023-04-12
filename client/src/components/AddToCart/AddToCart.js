@@ -1,7 +1,6 @@
 //import { useParams } from "react-router-dom";
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { categoriesMock } from "../../categoriesMock";
 import './AddToCart.styles.css';
 
 import { addToCart } from "../../store/Cart/actions";

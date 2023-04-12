@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from "react-router-dom";
 import itemsDataService from '../../services/categories';
-import { categoriesMock } from "../../categoriesMock";
 import './Items.styles.css';
 
 const Items = ({ id }) => {
