@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import './AddToCart.styles.css';
 
 import { addToCart } from "../../store/Cart/actions";
-import Cart from '../Cart/Cart';
 
 import itemsDataService from '../../services/categories';
 
@@ -16,9 +15,7 @@ const AddToCart = ({ id, itemId }) => {
 
     const [size, setSize] = useState('');
     const [item, setItem] = useState();
-
-    console.log('id del item', itemId)
-
+    const [message, setMessage] = useState('');
 
     useEffect(() => {
         setLoading(true);
@@ -30,25 +27,75 @@ const AddToCart = ({ id, itemId }) => {
         });
     }, []);
 
-    console.log(item)
-
-
     const handleAddToCart = () => {
-        dispatch(addToCart({
-            id: item.id,
-            name: item.name,
-            price: item.price,
-            image: item.image,
-            size: size,
-        }));
+        if (size === "") {
+            setMessage('You must choose a size')
+        } else {
+            dispatch(addToCart({
+                id: item.id,
+                name: item.name,
+                price: item.price,
+                image: item.image,
+                size: size,
+            }));
+
+            setMessage("")
+        }
+
     };
 
     if (loading) {
         return <p>Loading...</p>;
     }
 
+    const clothingCategory = () => {
+        return (
+            <select
+                className='addToCart-select'
+                value={size}
+                onChange={(e) => setSize(e.target.value)}>
+                <option>select size</option>
+                <option>xs - 36</option>
+                <option>s - 38</option>
+                <option>m - 40</option>
+                <option>l - 42</option>
+                <option>xl - 44</option>
+                <option>xxl - 46</option>
+            </select>
+        );
+    };
+
+    const footwearCategory = () => {
+        return (
+            <select
+                className='addToCart-select'
+                value={size}
+                onChange={(e) => setSize(e.target.value)}
+            >
+                <option>select size</option>
+                <option>39</option>
+                <option>40</option>
+                <option>41</option>
+                <option>42</option>
+                <option>43</option>
+                <option>44</option>
+                <option>45</option>
+            </select>
+        );
+    };
+
+    const category = item.category
+    let select;
+
+    if (category === "knits" || category === "outwear" || category === "shirts" || category === "bottoms") {
+        select = clothingCategory();
+    } else if (category === "footwear") {
+        select = footwearCategory();
+    }
+
+
     return (
-            
+
         <div className="addToCart-container">
 
             <div className='addToCart-product'>
@@ -67,26 +114,14 @@ const AddToCart = ({ id, itemId }) => {
                     </div>
 
                     <div className='btn-container'>
-                        <select
-                            className='addToCart-select'
-                            value={size}
-                            onChange={(e) => setSize(e.target.value)}
-                        >
-                            <option>select size</option>
-                            <option>xs - 36</option>
-                            <option>s - 38</option>
-                            <option>m - 40</option>
-                            <option>l - 42</option>
-                            <option>xl - 44</option>
-                            <option>xxl - 46</option>
-                        </select>
+                        {select}
                         <button
                             className='addToCart-button'
                             onClick={() => handleAddToCart(item)}
-                            disabled={!size}
                         >
                             add to cart
                         </button>
+                        {message}
                     </div>
 
                 </div>
