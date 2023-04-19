@@ -1,88 +1,140 @@
 //import { useParams } from "react-router-dom";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { categoriesMock } from "../../categoriesMock";
 import './AddToCart.styles.css';
 
 import { addToCart } from "../../store/Cart/actions";
-import Cart from '../Cart/Cart';
+
+import itemsDataService from '../../services/categories';
 
 const AddToCart = ({ id, itemId }) => {
 
-    console.log('itemId', itemId)
     const dispatch = useDispatch();
 
-    const categoriesId = categoriesMock.find(category => category.id === id);
-    const collection = categoriesId.collections;
-    const getItem = collection.find(e => e.id == itemId)
+    const [loading, setLoading] = useState(true);
 
     const [size, setSize] = useState('');
+    const [item, setItem] = useState();
+    const [message, setMessage] = useState('');
 
+    useEffect(() => {
+        setLoading(true);
+        itemsDataService.getItem(id, itemId).then((querySnapshot) => {
+            const itemData = querySnapshot.data();
+            const itemWithId = { id: querySnapshot.id, ...itemData };
+            setItem(itemWithId);
+            setLoading(false);
+        });
+    }, []);
 
     const handleAddToCart = () => {
-        dispatch(addToCart({
-            id: getItem.id,
-            name: getItem.name,
-            price: getItem.price,
-            image: getItem.image,
-            size: size,
-        }));
+        if (size === "") {
+            setMessage('You must choose a size')
+        } else {
+            dispatch(addToCart({
+                id: item.id,
+                name: item.name,
+                price: item.price,
+                image: item.image,
+                size: size,
+            }));
+
+            setMessage("")
+        }
+
     };
 
+    if (loading) {
+        return <p>Loading...</p>;
+    }
+
+    const clothingCategory = () => {
+        return (
+            <select
+                className='addToCart-select'
+                value={size}
+                onChange={(e) => setSize(e.target.value)}>
+                <option>select size</option>
+                <option>xs - 36</option>
+                <option>s - 38</option>
+                <option>m - 40</option>
+                <option>l - 42</option>
+                <option>xl - 44</option>
+                <option>xxl - 46</option>
+            </select>
+        );
+    };
+
+    const footwearCategory = () => {
+        return (
+            <select
+                className='addToCart-select'
+                value={size}
+                onChange={(e) => setSize(e.target.value)}
+            >
+                <option>select size</option>
+                <option>39</option>
+                <option>40</option>
+                <option>41</option>
+                <option>42</option>
+                <option>43</option>
+                <option>44</option>
+                <option>45</option>
+            </select>
+        );
+    };
+
+    const category = item.category
+    let select;
+
+    if (category === "knits" || category === "outwear" || category === "shirts" || category === "bottoms") {
+        select = clothingCategory();
+    } else if (category === "footwear") {
+        select = footwearCategory();
+    }
 
 
     return (
+
         <div className="addToCart-container">
 
             <div className='addToCart-product'>
                 <div className="addToCart-image">
                     <img
-                        src={getItem.secondImage}
-                        title={getItem.name}
-                        alt={getItem.name}
+                        src={item.secondImage}
+                        title={item.name}
+                        alt={item.name}
                     />
                 </div>
 
                 <div className='product-container'>
                     <div className='product-info'>
-                        <h2>{getItem.name}</h2>
-                        <h1>$ {getItem.price}</h1>
+                        <h2>{item.name}</h2>
+                        <h1>$ {item.price}</h1>
                     </div>
 
                     <div className='btn-container'>
-                        <select
-                            className='addToCart-select'
-                            value={size}
-                            onChange={(e) => setSize(e.target.value)}
-                        >
-                            <option>select size</option>
-                            <option>xs - 36</option>
-                            <option>s - 38</option>
-                            <option>m - 40</option>
-                            <option>l - 42</option>
-                            <option>xl - 44</option>
-                            <option>xxl - 46</option>
-                        </select>
+                        {select}
                         <button
                             className='addToCart-button'
-                            onClick={() => handleAddToCart(getItem)}
-                            disabled={!size}
+                            onClick={() => handleAddToCart(item)}
                         >
                             add to cart
                         </button>
+                        {message}
                     </div>
 
                 </div>
             </div>
 
             <div className='landscapeImage-container'>
-                <p className='itemInfo'>{getItem.info}</p>
+                <p className='itemInfo'>{item.info}</p>
 
                 <img
                     className='landscapeImage'
-                    src={getItem.landscapeImage}
-                    title={getItem.name}
-                    alt={getItem.name}
+                    src={item.landscapeImage}
+                    title={item.name}
+                    alt={item.name}
                 />
             </div>
 
