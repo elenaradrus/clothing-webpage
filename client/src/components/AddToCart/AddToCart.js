@@ -101,6 +101,7 @@ const AddToCart = ({ id, itemId }) => {
             <div className='addToCart-product'>
                 <div className="addToCart-image">
                     <img
+                        loading='lazy'
                         src={item.secondImage}
                         title={item.name}
                         alt={item.name}

@@ -4,7 +4,7 @@ import itemsDataService from '../../services/categories';
 import './Items.styles.css';
 
 const Items = ({ id }) => {
-    
+
     const [items, setItems] = useState();
     const [currentImage, setCurrentImage] = useState(null);
     const navigate = useNavigate();
@@ -40,6 +40,7 @@ const Items = ({ id }) => {
                 <div key={index} className='item-list'>
                     <div className='item-image' id='item.id' onClick={(e) => goToPurchaseProduct(items.id)}>
                         <img
+                            loading='lazy'
                             src={currentImage === items.data.image ? items.data.thumbnail : items.data.image}
                             title={items.data.name}
                             alt={items.data.name}

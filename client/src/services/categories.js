@@ -19,6 +19,7 @@ class ItemsDataService {
         const querySnapshot = await getDocs(collection(db, COLLECTIONS.CATEGORIES, categoryId, COLLECTIONS.ITEMS ));
         return querySnapshot;
     }
+    
     getItem = async (categoryId, itemId) => { 
         const itemDocRef = doc(db, COLLECTIONS.CATEGORIES, categoryId, COLLECTIONS.ITEMS, itemId );
         const itemSnapshot = await getDoc(itemDocRef);
