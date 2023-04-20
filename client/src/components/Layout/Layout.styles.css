@@ -4,16 +4,24 @@
 }
 
 @media (min-width: 768px) {
+    
+    
     .children-container{
         display: flex;
     }
 }
 
-.children-container{
-    display: flex;
+@media (max-width: 767px) {
+    
+
+    .children-container{
+        display: flex;
+    }
+    
+    .layout-container{
+        width: 100vw;
+    }
 }
 
-.layout-container{
-    width: 100vw;
-}
+
 
