@@ -101,6 +101,7 @@ const AddToCart = ({ id, itemId }) => {
             <div className='addToCart-product'>
                 <div className="addToCart-image">
                     <img
+
                         loading='lazy'
                         src={item.secondImage}
                         title={item.name}
@@ -129,7 +130,9 @@ const AddToCart = ({ id, itemId }) => {
             </div>
 
             <div className='landscapeImage-container'>
-                <p className='itemInfo'>{item.info}</p>
+                <div className='itemInfo'>
+                    <p>{item.info}</p>
+                </div>
 
                 <img
                     className='landscapeImage'
