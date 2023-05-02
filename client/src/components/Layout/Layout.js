@@ -36,7 +36,7 @@ const Layout = ({ children }) => {
             />
             <div className="children-container">
                 {children}
-                <div>
+                <div className="showCart">
                     {showCart && <Cart handleHideCart={handleHideCart} />}
                     {showUser && <Register handleHideUser={handleHideUser}/>}
                 </div>
