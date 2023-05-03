@@ -6,7 +6,7 @@ const Footer = () => {
             <div className='footer-container'>
                 <div className='footerInfo'>
                     <h3 className='footerTitle'>Jeremy Tunner</h3>
-                    <p className='footerText'>Receive 20% off your first purchase</p>
+                    <p className='footerText'>We’re challenging the way the clothing industry operates. The way we source. The way we sew. The way we sell.</p>
                 </div>
 
                 <div className='footerInfo'>

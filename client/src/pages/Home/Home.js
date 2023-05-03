@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Layout from "../../components/Layout/Layout";
 import Slideshow from "../../components/Slideshow/Slideshow";
 import Categories from "../../components/Categories/Categories";
@@ -7,11 +8,10 @@ import './Home.styles.css'
 const Home = () => {
     return (
         <Layout>
-            <div classname='homeLayout'>
+            <div>
                 <Slideshow slides={slides} />
                 <Categories />
             </div>
-
         </Layout>
     );
 }
