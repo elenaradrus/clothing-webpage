@@ -4,41 +4,49 @@ import Footer from "../Footer/Footer";
 import Cart from "../Cart/Cart";
 import Register from "../Register/Register";
 import './Layout.styles.css';
+import Shop from "../Shop/Shop";
 
 const Layout = ({ children }) => {
 
     const [showCart, setShowCart] = useState(false);
-    const [showUser, setShowUser] = useState(false)
+    const [showShop, setShowShop] = useState(false);
+    // const [showUser, setShowUser] = useState(false)
 
     const handleShowCart = () => {
         setShowCart(true);
-        setShowUser(false);
+        // setShowUser(false);
     };
 
     const handleHideCart = () => {
         setShowCart(false);
     };
 
-    const handleShowUser = () => {
-        setShowUser(true);
-        setShowCart(false);
-    };
+    const handleShowShop = () => {
+        setShowShop(!showShop);
+    }
 
-    const handleHideUser = () => {
-        setShowUser(false);
-    };
+    // const handleShowUser = () => {
+    //     setShowUser(true);
+    //     setShowCart(false);
+    // };
+
+    // const handleHideUser = () => {
+    //     setShowUser(false);
+    // };
 
     return (
         <div className="layout-container">
             <UpperMenu
                 handleShowCart={handleShowCart}
-                handleShowUser={handleShowUser}
+                handleShowShop={handleShowShop}
+                // handleShowUser={handleShowUser}
             />
+            {showShop && <Shop />}
             <div className="children-container">
                 {children}
                 <div className="showCart">
                     {showCart && <Cart handleHideCart={handleHideCart} />}
-                    {showUser && <Register handleHideUser={handleHideUser}/>}
+                    {/* {showUser && <Register handleHideUser={handleHideUser}/>} */}
                 </div>
             </div>
             <Footer />

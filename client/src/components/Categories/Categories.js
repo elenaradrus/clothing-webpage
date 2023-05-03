@@ -1,5 +1,4 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { categoriesMock } from "../../categoriesMock";
 import './Categories.styles.css';
 import itemsDataService from "../../services/categories";
 import { useEffect, useState } from "react";

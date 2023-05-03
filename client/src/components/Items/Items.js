@@ -32,7 +32,7 @@ const Items = ({ id }) => {
             });
         });
 
-    }, [])
+    }, [id])
 
     return (
         <div className='items-container'>

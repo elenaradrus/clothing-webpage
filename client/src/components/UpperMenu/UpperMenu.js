@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import './UpperMenu.styles.css';
 
-const UpperMenu = ({ handleShowCart, handleShowUser }) => {
+const UpperMenu = ({ handleShowCart, handleShowUser, handleShowShop }) => {
 
     const navigate = useNavigate();
     const goToHomePage = () => {
@@ -13,7 +13,7 @@ const UpperMenu = ({ handleShowCart, handleShowUser }) => {
         <div className="upperMenu-container">
             <div className="links">
                 <h3 className='jeremyTunner' onClick={() => goToHomePage()}>Jeremy Tunner</h3>
-                <p className='upperMenuText'>Shop</p>
+                <p className='upperMenuText' onClick={() => handleShowShop()}>Shop</p>
                 <p className='upperMenuText'>About</p>
                 <p className='upperMenuText'>Help</p>
             </div>
