@@ -3,12 +3,12 @@ import {getAuth} from "firebase/auth";
 import {getFirestore} from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDWjCpPvIYJpYGk3ChMk7CEz9gAlvFt5Gg",
-  authDomain: "clothing-webpage.firebaseapp.com",
-  projectId: "clothing-webpage",
-  storageBucket: "clothing-webpage.appspot.com",
-  messagingSenderId: "883098848034",
-  appId: "1:883098848034:web:0a77c24c41f8d01208b37b"
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID
 };
 
 const app = initializeApp(firebaseConfig);

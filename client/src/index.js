@@ -8,6 +8,7 @@ import Purchase from './pages/Purchase/Purchase';
 import { Provider } from 'react-redux';
 import store from './store';
 import Cart from './components/Cart/Cart';
+import CheckoutPage from './pages/CheckoutPage/CheckoutPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -18,6 +19,7 @@ root.render(
         <Route path="/collections/:id" element={<Collections />} />
         <Route path="/collections/:id/product/:itemId" element={<Purchase />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/checkout" element={<CheckoutPage />} />
       </Routes>
     </BrowserRouter>
   </Provider>

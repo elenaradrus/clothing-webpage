@@ -51,21 +51,39 @@
     text-transform: uppercase;
 }
 
-.cartTotalPrice {
+.cartTotalPrice,
+.checkout {
     display: flex;
-    justify-content: flex-end;
-    padding-right: 2rem;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem;
+    /* justify-content: flex-end; */
+    /* padding-right: 2rem;
     padding-bottom: 1rem;
-    margin-top: 2rem;
+    margin-top: 2rem; */
     font-weight: 700;
 }
 
-.addToCartButton {
+.deleteButton {
     margin-top: 1rem;
     background-color: transparent;
     border: none;
     cursor: pointer;
-    
+}
+
+.cartCheckout {
+    display: flex;
+    justify-content: space-around;
+}
+
+.checkout {
+    background-color: #313233;
+    border-style: none;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 200;
+    width: 8rem;
+    cursor: pointer;
 }
 
 ul {

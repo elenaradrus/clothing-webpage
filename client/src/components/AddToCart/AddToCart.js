@@ -78,7 +78,6 @@ const AddToCart = ({ id, itemId }) => {
                 value={size}
                 onChange={(e) => setSize(e.target.value)}
             >
-                <option>select size</option>
                 <option>39</option>
                 <option>40</option>
                 <option>41</option>
