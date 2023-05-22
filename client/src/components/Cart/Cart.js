@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { removeFromCart } from '../../store/Cart/actions';
 
 import './Cart.styles.css';
@@ -9,11 +11,15 @@ const Cart = ({ handleHideCart }) => {
     const totalPrice = useSelector(state => state.cart.totalPrice);
 
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const handleRemoveFromCart = (id) => {
         dispatch(removeFromCart(id));
     };
 
+    const goToCheckout = () => {
+        navigate('/checkout')
+    }
 
     return (
         <div className='cart-container'>
@@ -46,7 +52,7 @@ const Cart = ({ handleHideCart }) => {
                                 <div>$ {item.totalPrice}</div>
                                 <button
                                     onClick={() => handleRemoveFromCart(item.id)}
-                                    className='addToCartButton'
+                                    className='deleteButton'
                                 >
                                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -63,7 +69,15 @@ const Cart = ({ handleHideCart }) => {
                 </ul>
             </div>
 
-            <div>
+            <div className='cartCheckout'>
+                {totalPrice > 0 && (
+                    <button
+                        className='checkout'
+                        onClick={() => goToCheckout()}
+                    >
+                        Checkout
+                    </button>
+                )}
                 <p className='cartTotalPrice'>Total: $ {totalPrice}</p>
             </div>
 
