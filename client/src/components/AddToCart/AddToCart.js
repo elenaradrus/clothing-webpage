@@ -28,21 +28,28 @@ const AddToCart = ({ id, itemId }) => {
     }, []);
 
     const handleAddToCart = () => {
-        if (size === "") {
-            setMessage('You must choose a size')
-        } else {
-            dispatch(addToCart({
-                id: item.id,
-                name: item.name,
-                price: item.price,
-                image: item.image,
-                size: size,
-            }));
 
-            setMessage("")
-        }
+        dispatch(addToCart({
+            id: item.id,
+            name: item.name,
+            price: item.price,
+            image: item.image,
+            size: size,
+        }));
 
+        setMessage("Added to your shopping cart")
     };
+
+    useEffect(() => {
+        if (message) {
+            const timer = setTimeout(() => {
+                setMessage('');
+            }, 2000);
+
+            return () => clearTimeout(timer);
+        }
+    }, [message]);
+
 
     if (loading) {
         return <p>Loading...</p>;
@@ -54,7 +61,6 @@ const AddToCart = ({ id, itemId }) => {
                 className='addToCart-select'
                 value={size}
                 onChange={(e) => setSize(e.target.value)}>
-                <option>select size</option>
                 <option>xs - 36</option>
                 <option>s - 38</option>
                 <option>m - 40</option>
@@ -123,7 +129,7 @@ const AddToCart = ({ id, itemId }) => {
                         >
                             add to cart
                         </button>
-                        {message}
+                        {message && <div className='addToCartMessage'>{message}</div>}
                     </div>
 
                 </div>
