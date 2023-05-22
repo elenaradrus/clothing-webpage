@@ -1,5 +1,17 @@
-.shop-container {
-    display: flex;
-    justify-content: space-around;
-    padding: 1rem 0rem 1rem 0rem;
+@media (min-width: 768px) {
+    .shop-container {
+        display: flex;
+        justify-content: space-around;
+        padding: 1rem 0rem 1rem 0rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .shop-container {
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+        justify-content: center;
+        align-items: center;
+    }
 }
