@@ -21,7 +21,7 @@
     }
     
     .jeremyTunner:hover {
-        color: darkblue;
+        color: #0B798A;
     }
     
     .upperMenuText {
@@ -40,7 +40,7 @@
         width: 92%;
         height: 2px;
         border-radius: 4px;
-        background-color: #18272F;
+        background-color: #0B798A;
         bottom: 0;
         left: 0;
         transform-origin: right;
@@ -88,7 +88,7 @@
     }
     
     .jeremyTunner:hover {
-        color: darkblue;
+        color: #0B798A;
     }
     
     .upperMenuText {
@@ -107,7 +107,7 @@
         width: 92%;
         height: 2px;
         border-radius: 4px;
-        background-color: #18272F;
+        background-color: #0B798A;
         bottom: 0;
         left: 0;
         transform-origin: right;
