@@ -1,6 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Quicksand:wght@400;600&display=swap');
+
 * {
     margin: 0;
     padding: 0;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
 }
 
 @media (min-width: 768px) {
@@ -12,7 +18,7 @@
     .children-container {
         display: flex;
     }
-    
+
 }
 
 @media (max-width: 767px) {
@@ -20,7 +26,7 @@
         margin: 0;
         padding: 0;
     }
-    
+
     .layout-container {
         width: 100vw;
     }
