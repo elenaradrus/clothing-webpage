@@ -1,0 +1,19 @@
+.checkoutText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    padding: 5rem;
+    line-height: 2rem;
+}
+
+.checkoutLink {
+    color: black;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.checkoutLink:hover {
+    color: #0B798A;
+}

@@ -1,14 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home/Home';
+import Collections from './pages/Collections/Collections';
 import reportWebVitals from './reportWebVitals';
+import Purchase from './pages/Purchase/Purchase';
+import { Provider } from 'react-redux';
+import store from './store';
+import Cart from './components/Cart/Cart';
+import CheckoutPage from './pages/CheckoutPage/CheckoutPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <Provider store={store}>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/collections/:id" element={<Collections />} />
+        <Route path="/collections/:id/product/:itemId" element={<Purchase />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/checkout" element={<CheckoutPage />} />
+      </Routes>
+    </BrowserRouter>
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -1,0 +1,133 @@
+@media (min-width: 768px) {
+    .upperMenu-container {
+        display: flex;
+        justify-content: space-between;
+        height: 4rem;
+        width: 100vw;
+    }
+
+    .links {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 40%;
+        padding-left: 1.5rem;
+    }
+    
+    .jeremyTunner {
+        text-transform: uppercase;
+        letter-spacing: .2rem;
+        cursor: pointer;
+    }
+    
+    .jeremyTunner:hover {
+        color: #0B798A;
+    }
+    
+    .upperMenuText {
+        text-transform: uppercase;
+        font-size: small;
+        letter-spacing: .3rem;
+        color: #18272F;
+        position: relative;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+    .upperMenuText::before {
+        content: '';
+        position: absolute;
+        width: 92%;
+        height: 2px;
+        border-radius: 4px;
+        background-color: #0B798A;
+        bottom: 0;
+        left: 0;
+        transform-origin: right;
+        transform: scaleX(0);
+        transition: transform .3s ease-in-out;
+    }
+    
+    .upperMenuText:hover::before {
+        transform-origin: left;
+        transform: scaleX(1);
+    }
+    
+    .icons {
+        width: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        padding-right: 1rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .upperMenu-container {
+        display: flex;
+        justify-content: space-between;
+        height: fit-content;
+        width: 100vw;
+    }
+
+    .links {
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        width: 60%;
+        padding-left: 1.5rem;
+    }
+    
+    .jeremyTunner {
+        text-transform: uppercase;
+        letter-spacing: .2rem;
+        cursor: pointer;
+    }
+    
+    .jeremyTunner:hover {
+        color: #0B798A;
+    }
+    
+    .upperMenuText {
+        text-transform: uppercase;
+        font-size: small;
+        letter-spacing: .3rem;
+        color: #18272F;
+        position: relative;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+    .upperMenuText::before {
+        content: '';
+        position: absolute;
+        width: 92%;
+        height: 2px;
+        border-radius: 4px;
+        background-color: #0B798A;
+        bottom: 0;
+        left: 0;
+        transform-origin: right;
+        transform: scaleX(0);
+        transition: transform .3s ease-in-out;
+    }
+    
+    .upperMenuText:hover::before {
+        transform-origin: left;
+        transform: scaleX(1);
+    }
+    
+    .icons {
+        width: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        padding-bottom: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+

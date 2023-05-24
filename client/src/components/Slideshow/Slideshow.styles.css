@@ -1,0 +1,67 @@
+.mainPage-container {
+    height: fit-content;
+    width: 100vw;
+}
+
+@media (min-width: 768px) {
+    .slideShow {
+        height: 30rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .leftArrow {
+        position: absolute;
+        top: 40%;
+        transform: translate(0, -50%);
+        left: 32px;
+        font-size: 45px;
+        color: #fff;
+        z-index: 1;
+        cursor: pointer;
+    }
+    
+    .rightArrow {
+        position: absolute;
+        top: 40%;
+        transform: translate(0, -50%);
+        right: 32px;
+        font-size: 45px;
+        color: #fff;
+        z-index: 1;
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 767px) {
+    .slideShow {
+        background-position: center;
+        height: 30rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .leftArrow {
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+        left: 32px;
+        font-size: 45px;
+        color: #fff;
+        z-index: 1;
+        cursor: pointer;
+    }
+    
+    .rightArrow {
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+        right: 32px;
+        font-size: 45px;
+        color: #fff;
+        z-index: 1;
+        cursor: pointer;
+    }
+}
+
